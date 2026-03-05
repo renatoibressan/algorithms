@@ -333,7 +333,7 @@ public class Calc {
             Thread.sleep(1500);
             System.out.println("15. Maior que");
             Thread.sleep(1500);
-            System.out.println("16. menor que");
+            System.out.println("16. Menor que");
             Thread.sleep(1500);
             System.out.println("17. Maior ou igual");
             Thread.sleep(1500);

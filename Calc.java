@@ -271,7 +271,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultadoDouble = media_de_dois(a, b);
-                    System.out.println("Media de " + a + " e " + b + " = " + String.format("%.2f", resultadoDouble));
+                    System.out.println("Media de " + a + " e " + b + ": " + String.format("%.2f", resultadoDouble));
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -282,7 +282,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultadoLong = somatorio(a, b);
-                    System.out.println("Somatorio de " + a + " -> " + b + " = " + resultadoLong);
+                    System.out.println("Somatorio de " + a + " -> " + b + ": " + resultadoLong);
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -293,7 +293,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultadoLong = produtorio(a, b);
-                    System.out.println("Produtorio de " + a + " -> " + b + " = " + resultadoLong);
+                    System.out.println("Produtorio de " + a + " -> " + b + ": " + resultadoLong);
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -304,7 +304,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = maior_de_dois(a, b);
-                    System.out.println("Maior de " + a + " e " + b + " = " + resultado);
+                    System.out.println("Maior de " + a + " e " + b + ": " + resultado);
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -315,7 +315,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = menor_de_dois(a, b);
-                    System.out.println("Menor de " + a + " e " + b + " = " + resultado);
+                    System.out.println("Menor de " + a + " e " + b + ": " + resultado);
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -374,7 +374,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = igual_a(a, b);
-                    System.out.print(a + " == " + b + " = ");
+                    System.out.print(a + " == " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
                     Thread.sleep(1500);
@@ -387,7 +387,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = diferente_de(a, b);
-                    System.out.print(a + " != " + b + " = ");
+                    System.out.print(a + " != " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
                     Thread.sleep(1500);
@@ -400,7 +400,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = maior_que(a, b);
-                    System.out.print(a + " > " + b + " = ");
+                    System.out.print(a + " > " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
                     Thread.sleep(1500);
@@ -413,7 +413,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = menor_que(a, b);
-                    System.out.print(a + " < " + b + " = ");
+                    System.out.print(a + " < " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
                     Thread.sleep(1500);
@@ -426,7 +426,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = maior_ou_igual(a, b);
-                    System.out.print(a + " >= " + b + " = ");
+                    System.out.print(a + " >= " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
                     Thread.sleep(1500);
@@ -439,7 +439,7 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultado = menor_ou_igual(a, b);
-                    System.out.print(a + " <= " + b + " = ");
+                    System.out.print(a + " <= " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
                     Thread.sleep(1500);

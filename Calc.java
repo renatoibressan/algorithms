@@ -22,10 +22,18 @@ public class Calc {
     public static int resto(int a, int b) {
         return a % b;
     } // Função 05
-    public static long potenciacao(int a, int b) {
-        long p = 1;
-        for (int i = 0; i < b; i++) {
-            p *= a;
+    public static double potenciacao(int a, int b) {
+        double p = 1;
+        int i;
+        if (b == 0) return 1;
+        else if (b > 0) {
+            for (i = 0; i < b; i++) {
+                p *= a;
+            }
+        } else {
+            for (i = 0; i > b; i--) {
+                p /= a;
+            }
         }
         return p;
     } // Função 06
@@ -100,13 +108,14 @@ public class Calc {
     public static void aba_A() throws InterruptedException {
         int option = -1;
         int a, b = -1, resultado;
-        long resultadoLong;
         double resultadoDouble;
         String load = "...\n";
         limpar_tela();
         System.out.println("===== ABA A =====");
         Thread.sleep(2000);
         do {
+            a = 0;
+            b = 0;
             System.out.println("1. Adicao");
             Thread.sleep(1000);
             System.out.println("2. Subtracao");
@@ -161,7 +170,6 @@ public class Calc {
                     limpar_tela();
                     System.out.print("Digite o primeiro numero: ");
                     a = sc.nextInt();
-                    b = 0;
                     while (b == 0) {
                         System.out.print("Digite o segundo numero: ");
                         b = sc.nextInt();
@@ -176,7 +184,6 @@ public class Calc {
                     limpar_tela();
                     System.out.print("Digite o primeiro numero: ");
                     a = sc.nextInt();
-                    b = 0;
                     while (b == 0) {
                         System.out.print("Digite o segundo numero: ");
                         b = sc.nextInt();
@@ -191,14 +198,10 @@ public class Calc {
                     limpar_tela();
                     System.out.print("Digite o primeiro numero: ");
                     a = sc.nextInt();
-                    b = -1;
-                    while (b < 0) {
-                        System.out.print("Digite o segundo numero: ");
-                        b = sc.nextInt();
-                        if (b < 0) System.out.println("Nao trabalhamos com expoentes negativos!");
-                    }
-                    resultadoLong = potenciacao(a, b);
-                    System.out.println(a + " ^ " + b + " = " + resultadoLong);
+                    System.out.print("Digite o segundo numero: ");
+                    b = sc.nextInt();
+                    resultadoDouble = potenciacao(a, b);
+                    System.out.println(a + " ^ " + b + " = " + String.format("%.2f", resultadoDouble));
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -234,6 +237,9 @@ public class Calc {
         System.out.println("===== ABA B =====");
         Thread.sleep(2000);
         do {
+            n = -1;
+            a = 0;
+            b = 0;
             System.out.println("7. Fatorial");
             Thread.sleep(1000);
             System.out.println("8. Media de dois");
@@ -253,7 +259,6 @@ public class Calc {
             switch (option) {
                 case 7:
                     limpar_tela();
-                    n = -1;
                     while (n < 0) {
                         System.out.print("Digite um numero: ");
                         n = sc.nextInt();
@@ -350,6 +355,8 @@ public class Calc {
         System.out.println("===== ABA C =====");
         Thread.sleep(2000);
         do {
+            a = 0;
+            b = 0;
             System.out.println("13. Igual a");
             Thread.sleep(1000);
             System.out.println("14. Diferente de");

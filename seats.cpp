@@ -8,7 +8,7 @@ int main() {
     int seats_per_row, spaces;
     while (true) {
         cin >> seats_per_row;
-        if (seats_per_row >= 1 && N <= 100) break;
+        if (seats_per_row >= 1 && seats_per_row <= N) break;
     }
     spaces = spacesCount(seats_per_row);
     cout << spaces << endl;

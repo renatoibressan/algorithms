@@ -180,10 +180,10 @@ public class Calc {
                     limpar_tela();
                     System.out.print("Digite o primeiro numero: ");
                     a = sc.nextInt();
+                    System.out.print("Digite o segundo numero: ");
                     while (b == 0) {
-                        System.out.print("Digite o segundo numero: ");
                         b = sc.nextInt();
-                        if (b == 0) System.out.println("Nao e possivel dividir por 0!");
+                        if (b == 0) System.out.print("Nao e possivel dividir por 0! Por favor, tente novamente com outro numero: ");
                     }
                     resultadoDouble = divisao(a, b);
                     if (resto(a, b) != 0) casas = contar_casas_decimais(resultadoDouble);
@@ -195,10 +195,10 @@ public class Calc {
                     limpar_tela();
                     System.out.print("Digite o primeiro numero: ");
                     a = sc.nextInt();
+                    System.out.print("Digite o segundo numero: ");
                     while (b == 0) {
-                        System.out.print("Digite o segundo numero: ");
                         b = sc.nextInt();
-                        if (b == 0) System.out.println("Nao e possivel dividir por 0!");
+                        if (b == 0) System.out.print("Nao e possivel dividir por 0! Por favor, tente novamente com outro numero: ");
                     }
                     resultado = resto(a, b);
                     System.out.println(a + " % " + b + " = " + resultado);
@@ -273,10 +273,10 @@ public class Calc {
             switch (option) {
                 case 7:
                     limpar_tela();
+                    System.out.print("Digite um numero: ");
                     while (n < 0) {
-                        System.out.print("Digite um numero: ");
                         n = sc.nextInt();
-                        if (n < 0) System.out.println("Nao ha fatorial de numeros negativos!");
+                        if (n < 0) System.out.print("Nao ha fatorial de numeros negativos! Por favor, tente novamente com outro numero: ");
                     }
                     resultadoLong = fatorial(n);
                     System.out.println(n + "! = " + resultadoLong);

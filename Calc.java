@@ -7,21 +7,28 @@ public class Calc {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
+    public static int contar_casas_decimais(double n) {
+        String valor = String.valueOf(n);
+        int count = valor.length() - valor.indexOf('.') - 1;
+        if (count <= 0) return 0;
+        else if (count > 12) return 12;
+        else return count;
+    }
     public static int adicao(int a, int b) {
         return a + b;
-    } // Função 01
+    } // Função 01 - Adição
     public static int subtracao(int a, int b) {
         return a - b;
-    } // Função 02
+    } // Função 02 - Subtração
     public static int multiplicacao(int a, int b) {
         return a * b;
-    } // Função 03
+    } // Função 03 - Multiplicação
     public static double divisao(int a, int b) {
         return (double) a / (double) b;
-    } // Função 04
+    } // Função 04 - Divisão
     public static int resto(int a, int b) {
         return a % b;
-    } // Função 05
+    } // Função 05 - Resto
     public static double potenciacao(int a, int b) {
         double p = 1.0;
         int i;
@@ -37,7 +44,7 @@ public class Calc {
             }
         }
         return p;
-    } // Função 06
+    } // Função 06 - Potenciação
     public static long fatorial(int n) {
         if (n < 0) return -1;
         if (n == 0) return 1;
@@ -46,10 +53,10 @@ public class Calc {
             f *= i;
         }
         return f;
-    } // Função 07
+    } // Função 07 - Fatorial
     public static double media_de_dois(int a, int b) {
         return ((double)a + (double)b) / 2;
-    } // Função 08
+    } // Função 08 - Média de dois
     public static long somatorio(int a, int b) {
         if (a > b) {
             int temp = a;
@@ -61,7 +68,7 @@ public class Calc {
             s += i;
         }
         return s;
-    } // Função 09
+    } // Função 09 - Somatório
     public static long produtorio(int a, int b) {
         if (a > b) {
             int temp = a;
@@ -73,42 +80,43 @@ public class Calc {
             p *= i;
         }
         return p;
-    } // Função 10
+    } // Função 10 - Produtório
     public static int maior_de_dois(int a, int b) {
         if (a > b) return a;
         else return b;
-    } // Função 11
+    } // Função 11 - Maior de dois
     public static int menor_de_dois(int a, int b) {
         if (a < b) return a;
         else return b;
-    } // Função 12
+    } // Função 12 - Menor de dois
     public static boolean igual_a(int a, int b) {
         if (a == b) return true;
         else return false;
-    } // Função 13
+    } // Função 13 - Igual a
     public static boolean diferente_de(int a, int b) {
         if (a != b) return true;
         else return false;
-    } // Função 14
+    } // Função 14 - Diferente de
     public static boolean maior_que(int a, int b) {
         if (a > b) return true;
         else return false;
-    } // Função 15
+    } // Função 15 - Maior que
     public static boolean menor_que(int a, int b) {
         if (a < b) return true;
         else return false;
-    } // Função 16
-    public static boolean maior_ou_igual(int a, int b) {
+    } // Função 16 - Menor que
+    public static boolean maior_ou_igual_a(int a, int b) {
         if (a >= b) return true;
         else return false;
-    } // Função 17
-    public static boolean menor_ou_igual(int a, int b) {
+    } // Função 17 - Maior ou igual a
+    public static boolean menor_ou_igual_a(int a, int b) {
         if (a <= b) return true;
         else return false;
-    } // Função 18
+    } // Função 18 - Menor ou igual a
     public static void aba_A() throws InterruptedException {
         int option = -1;
-        int a, b = -1, resultado;
+        int casas;
+        int a, b, resultado;
         double resultadoDouble;
         String load = "...\n";
         limpar_tela();
@@ -117,6 +125,7 @@ public class Calc {
         do {
             a = 0;
             b = 0;
+            casas = 0;
             System.out.println("1. Adicao");
             Thread.sleep(1000);
             System.out.println("2. Subtracao");
@@ -177,7 +186,8 @@ public class Calc {
                         if (b == 0) System.out.println("Nao e possivel dividir por 0!");
                     }
                     resultadoDouble = divisao(a, b);
-                    System.out.println(a + " / " + b + " = " + String.format("%.2f", resultadoDouble));
+                    if (resto(a, b) != 0) casas = contar_casas_decimais(resultadoDouble);
+                    System.out.println(a + " / " + b + " = " + String.format("%." + casas + "f", resultadoDouble));
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -202,7 +212,8 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultadoDouble = potenciacao(a, b);
-                    System.out.println(a + " ^ " + b + " = " + String.format("%.2f", resultadoDouble));
+                    if (b < 0) casas = contar_casas_decimais(resultadoDouble);
+                    System.out.println(a + " ^ " + b + " = " + String.format("%." + casas + "f", resultadoDouble));
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -230,6 +241,7 @@ public class Calc {
     }
     public static void aba_B() throws InterruptedException {
         int option = -1;
+        int casas;
         int n, a, b, resultado;
         long resultadoLong;
         double resultadoDouble;
@@ -241,6 +253,7 @@ public class Calc {
             n = -1;
             a = 0;
             b = 0;
+            casas = 0;
             System.out.println("7. Fatorial");
             Thread.sleep(1000);
             System.out.println("8. Media de dois");
@@ -277,7 +290,8 @@ public class Calc {
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
                     resultadoDouble = media_de_dois(a, b);
-                    System.out.println("Media de " + a + " e " + b + ": " + String.format("%.2f", resultadoDouble));
+                    if (resto(adicao(a, b), 2) != 0) casas = contar_casas_decimais(resultadoDouble);
+                    System.out.println("Media de " + a + " e " + b + ": " + String.format("%." + casas + "f", resultadoDouble));
                     Thread.sleep(1500);
                     limpar_tela();
                     break;
@@ -366,9 +380,9 @@ public class Calc {
             Thread.sleep(1000);
             System.out.println("16. Menor que");
             Thread.sleep(1000);
-            System.out.println("17. Maior ou igual");
+            System.out.println("17. Maior ou igual a");
             Thread.sleep(1000);
-            System.out.println("18. Menor ou igual");
+            System.out.println("18. Menor ou igual a");
             Thread.sleep(1000);
             System.out.println("0. Voltar ao menu principal");
             Thread.sleep(1000);
@@ -433,7 +447,7 @@ public class Calc {
                     a = sc.nextInt();
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
-                    resultado = maior_ou_igual(a, b);
+                    resultado = maior_ou_igual_a(a, b);
                     System.out.print(a + " >= " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");
@@ -446,7 +460,7 @@ public class Calc {
                     a = sc.nextInt();
                     System.out.print("Digite o segundo numero: ");
                     b = sc.nextInt();
-                    resultado = menor_ou_igual(a, b);
+                    resultado = menor_ou_igual_a(a, b);
                     System.out.print(a + " <= " + b + ": ");
                     if (resultado == true) System.out.println("afirmacao verdadeira");
                     else System.out.println("afirmacao falsa");

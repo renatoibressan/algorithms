@@ -23,10 +23,11 @@ public class Calc {
         return a % b;
     } // Função 05
     public static double potenciacao(int a, int b) {
-        double p = 1;
+        double p = 1.0;
         int i;
-        if (b == 0) return 1;
-        else if (b > 0) {
+        if (b == 0) {
+            return 1;
+        } else if (b > 0) {
             for (i = 0; i < b; i++) {
                 p *= a;
             }
